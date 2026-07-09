@@ -1,0 +1,121 @@
+/*importing fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*Ensures padding and borders don't affect element width.*/
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex; /* Everything automatically moves to the center of the page without writing any extra margin or padding.
+     vrna sab kone me hi rehta*/
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.wrapper{
+    position: relative; /*It makes sure that the bulb images and button stay inside the box and not outside.*/
+    height: 500px;
+    width: 450px;
+}
+
+.wrapper img{
+    position: absolute; /*Places the bulb images on top of each other.*/
+    height: 450px;
+    width: 100%; /*Makes the image fit the wrapper width.*/
+    margin-top: -50px; /* Moves the image a little up.*/
+}
+
+.wrapper label{
+    position: absolute; /*To move the button exactly to the bottom center of the wrapper.*/
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%); /*button ko center rkhta hai yeh also, the button
+     moves half of its own width to the left and becomes perfectly centered:*/
+}
+
+.wrapper label span{
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: block;
+    border: 2px solid #fff;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /*Smooth hover effect.*/
+}
+
+.wrapper label span::before{
+    content: "Turn off";   /*This is used to add text content before the button without writing text inside the HTML.*/
+    /* What happens here? The button shows the text "Turn off" automatically.*/
+} /*Why use ::before?
+It allows us to inject text into the button dynamically without changing HTML.
+*/
+
+.wrapper label span:hover{
+    background: #fff;
+    color: #111;
+} /*Hover hai yeh toh pta hai*/
+
+.wrapper img#bulb-on{
+    opacity: 0;
+    animation: glow 3s linear infinite; /*opacity: 0; → The bulb is hidden.
+    animation: glow 3s linear infinite; → Bulb will glow in a loop forever.*/
+}
+
+@keyframes glow {
+    0%{
+      opacity: 1;
+    }
+    5%{
+      opacity: 1;
+    }
+    70%{
+      opacity: 1;
+    }
+    74%{
+      opacity: 0;
+    }
+    80%{
+      opacity: 1;
+    }
+    84%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+    } /*0% → 70%	Bulb ON 🔥
+    74% → 84%	Bulb flickers OFF ⚡
+    90% → 100%	Bulb ON 🔥*/  
+  }
+
+  #btn:checked ~ img#bulb-on{
+    animation: none;  /*/* Stop the glowing animation */
+    /*#btn:checked → When the checkbox is checked (button clicked)
+~ img#bulb-on → It selects the glowing bulb image
+animation: none; → Stops the glowing effect*/
+  }
+  #btn:checked ~ .btn span:before{
+    content: "Turn on"; /*text change krega */
+  }
+  .wrapper input{
+    display: none; /*ek check box bhi hai usko hidee kra*/
+  }
+
+  /* Final Concept Flow 💪
+
+Bulb ON 🔥	opacity: 1; + animation: glow
+Bulb OFF ❌	opacity: 0; + animation: none
+Button Text	Automatically switches between "Turn On" and "Turn Off" */
