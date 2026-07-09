@@ -19,5 +19,5 @@ flicker/glow effect.
 - CSS3 (keyframe animations, pseudo-elements, checkbox hack, transitions)
 - Google Fonts (Poppins, Merriweather)
 
-![](https://github.com/AkashSharma-Artist/FitClub-Gym-Fitness-Landing-Page/blob/main/ChatGPT%20Image%20Jul%209%2C%202026%2C%2005_46_27%20PM.png)
-![](https://github.com/AkashSharma-Artist/FitClub-Gym-Fitness-Landing-Page/blob/main/ChatGPT%20Image%20Jul%209%2C%202026%2C%2005_46_27%20PM.png)
+![](https://github.com/AkashSharma-Artist/Glowing-Bulb/blob/main/Screenshot%202026-07-10%20010149.png)
+![](https://github.com/AkashSharma-Artist/Glowing-Bulb/blob/main/Screenshot%202026-07-10%20010158.png)
